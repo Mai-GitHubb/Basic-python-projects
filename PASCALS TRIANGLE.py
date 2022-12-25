@@ -1,9 +1,12 @@
 def fact(x):
     factorial = 1
     if x == 0 or x == 1:
-        return 1
+        factorial = 1
     else:
-        return x*fact(x-1)
+        for i in range(1, x+1):
+            factorial *= i
+            i += 1
+    return factorial
 
 
 def ncr(n, r):
