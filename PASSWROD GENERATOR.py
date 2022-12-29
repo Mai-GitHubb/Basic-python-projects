@@ -2,9 +2,8 @@ def random_pass(length, no_num, no_sym):
     import random as r
     import string
     alpha = list(string.ascii_letters)
-    num = [str(i) for i in range(0,10)]
-    sym = ['!', '#', '$', '%', '&', "'", '"', '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?',
-           '@', '[', '\\', ']', '^', '_', '`', '{', '|', '}', '~']
+    num = list(string.digits)
+    sym = list(string.punctuation)
     ranalpha, rannum, ransym = [], [], []
 
 # random alphabets
@@ -36,6 +35,7 @@ def random_pass(length, no_num, no_sym):
 
     for k in r.sample(ranalpha+ransym+rannum, length):
         print(k, end='')
+
 
 length = int(input('How long do you want your password to be: '))
 no_num = int(input('How many numbers should your password contain: '))
